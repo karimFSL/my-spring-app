@@ -17,6 +17,7 @@
 	<description>application test intégrée dans une chaîne d&apos;intégration continue</description>
 	<properties>
 		<java.version>1.8</java.version>
+		<java.test>tesst.8</java.test>
 	</properties>
 	<dependencies>
 		<dependency>
