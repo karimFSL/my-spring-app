@@ -14,7 +14,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>my-spring-app</name>
 	<packaging>jar</packaging>
-	<description>application test intégrée dans une chaîne d&apos;intégration continue</description>
+	<description>applidddcation test intégrée dans une chaîne d&apos;intégration continue</description>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
