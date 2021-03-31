@@ -1,4 +1,7 @@
 node {
 
-    print "${env.BRANCH_NAME}"
+
+    stage('Test') { 
+        print "${env.BRANCH_NAME}"
+    }
 }
