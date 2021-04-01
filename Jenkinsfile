@@ -18,7 +18,7 @@ pipeline {
 
 
     stages {
-        stage('Test') { 
+        stage('Tesst') { 
             steps {
                 scripts {
                      print "${env.BRANCH_NAME}"
