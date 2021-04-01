@@ -45,10 +45,10 @@ pipeline {
             }
         }
 
-        stage('Deploy') { 
-             steps {
-            }
-        }
+        // stage('Deploy') { 
+        //      steps {
+        //     }
+        // }
 
     }
  
