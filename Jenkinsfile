@@ -1,23 +1,54 @@
-node {
+pipeline {
 
+    agent any
 
-    stage('Test') { 
-        print "${env.BRANCH_NAME}"
+    tools {
+        jdk 'jdk_update'
+        maven 'mvn_363'
     }
 
-      stage('compile') { 
-        sh 'mvn compile'
+    environment {
+
+        NEXUS_VERSION = "nexus3"
+        NEXUS_PROTOCOL = "http"
+        NEXUS_URL = "localhost:8081"
+        NEXUS_REPOSITORY = "repository-example"
+        NEXUS_CREDENTIAL_ID = "nexus-credentials"
     }
 
-     stage('Unit Tests') { 
-       sh 'mvn test'
-    }
 
-     stage('Package') { 
-       sh 'mvn package'
-    }
+    stages {
+        stage('Test') { 
+            steps {
+                scripts {
+                     print "${env.BRANCH_NAME}"
+                }
+            }
+           
+        }
 
-     stage('Deploy') { 
-     
+        stage('compile') { 
+            steps {
+                sh 'mvn compile'
+            }
+        }
+
+        stage('Unit Tests') { 
+            steps {
+                sh 'mvn test'
+            }
+        }
+
+        stage('Package') { 
+            steps {
+                sh 'mvn package'
+            }
+        }
+
+        stage('Deploy') { 
+    
+        }
+
     }
+ 
 }
