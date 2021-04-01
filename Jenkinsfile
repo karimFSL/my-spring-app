@@ -18,15 +18,6 @@ pipeline {
 
 
     stages {
-        stage('Tesst') { 
-            steps {
-                scripts {
-                     print "${env.BRANCH_NAME}"
-                }
-            }
-           
-        }
-
         stage('compile') { 
             steps {
                 sh 'mvn compile'
