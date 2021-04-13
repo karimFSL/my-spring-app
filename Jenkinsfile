@@ -30,11 +30,20 @@ pipeline {
             }
         }
 
-        stage('Package') { 
+        // deployer l'application sur le server de test iso a la prod 
+        stage('Package and deploy application') { 
             steps {
-                sh 'mvn package'
+                sh 'mvn package wildfly:deploy'
             }
         }
+
+
+        // stage('Acceptance Tests') { 
+        //     Cucumber/Robotframework/SoapUI
+        //     steps {
+        //         
+        //     }
+        // }
 
 
           stage("Publish to Nexus Repository Manager") {
@@ -73,12 +82,6 @@ pipeline {
                 }
             }
         }
-
-        // stage('Deploy') { 
-        //      steps {
-        //     }
-        // }
-
     }
  
 }
